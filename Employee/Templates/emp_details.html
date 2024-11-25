@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Employee Details</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Role</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Address</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{emp.name}}</td>
+      <td>{{emp.role}}</td>
+      <td>{{emp.salary}}</td>
+      <td>{{emp.address}}</td>
+      <td>
+        <a href="{% url 'emp:edit_emp' emp.id %}">Edit</a>
+        <a href="{% url 'emp:delete_emp' emp.id %}">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
